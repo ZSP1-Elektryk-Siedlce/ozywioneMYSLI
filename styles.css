@@ -213,6 +213,10 @@ button:hover {
 
     p,
     button {
-        font-size: clamp(12px, 3vw, 14px);
+        font-size: clamp(10px, 3vw, 12px);
+    }
+
+    .poem .dialogue-text {
+        font-size: 0.6rem;
     }
 }

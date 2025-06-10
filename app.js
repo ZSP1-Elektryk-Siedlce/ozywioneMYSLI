@@ -95,7 +95,6 @@ function createElement(item) {
             const author = document.createElement('p');
             author.className = 'direction';
             author.textContent = "Wiersz - autor(ka): " + item.author
-            console.log(item.author)
             p.appendChild(author)
 
             const p2 = document.createElement('p');
@@ -139,7 +138,7 @@ function paginateScene(scene, pageHeight) {
     scene.content.forEach(item => {
         const element = createElement(item);
         container.appendChild(element);
-        if (container.scrollHeight * 0.9 > pageHeight) {
+        if (container.scrollHeight * 0.8 > pageHeight) {
             container.removeChild(element);
             pages.push(currentPageContent);
             container.innerHTML = '';
