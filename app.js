@@ -138,7 +138,10 @@ function paginateScene(scene, pageHeight) {
     scene.content.forEach(item => {
         const element = createElement(item);
         container.appendChild(element);
-        if (container.scrollHeight * 0.8 > pageHeight) {
+        // Use 0.8 on phones, 0.9 on desktops
+        const isPhone = window.innerWidth <= 600;
+        const scrollFactor = isPhone ? 0.8 : 0.9;
+        if (container.scrollHeight * scrollFactor > pageHeight) {
             container.removeChild(element);
             pages.push(currentPageContent);
             container.innerHTML = '';
